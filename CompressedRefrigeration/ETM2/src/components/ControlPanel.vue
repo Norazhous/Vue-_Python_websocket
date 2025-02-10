@@ -96,7 +96,7 @@
 									<td>Shut-off Valve Thermostatic Expansion Valve</td>
 									<td>Control</td>
 								</tr>
-								<tr>
+								<!-- <tr>
 									<th scope="row">2</th>
 									<td>V2</td>
 									<td>Shut-off Valve Capillary Tube 1.5m</td>
@@ -113,81 +113,81 @@
 									<td>V4</td>
 									<td>Shut-off Valve Capillary Tube 6m</td>
 									<td>Control</td>
-								</tr>
+								</tr> -->
 								<tr>
-									<th scope="row">5</th>
+									<th scope="row">2</th>
 									<td>V5</td>
 									<td>Shut-off Valve Receiver Outlet</td>
 									<td>Control</td>
 								</tr>
 								<tr>
-									<th scope="row">6</th>
+									<th scope="row">3</th>
 									<td>V6</td>
 									<td>Shut-off Valve Receiver Inlet</td>
 									<td>Control</td>
 								</tr>
-								<tr>
+								<!-- <tr>
 									<th scope="row">7</th>
 									<td>V7</td>
 									<td>Shut-off Valve Receiver Bypass</td>
 									<td>Control</td>
-								</tr>
+								</tr> -->
 								<tr>
-									<th scope="row">8</th>
+									<th scope="row">4</th>
 									<td>T-01</td>
 									<td>Compressor Inlet Temperature</td>
 									<td>Monitor</td>
 								</tr>
 								<tr>
-									<th scope="row">9</th>
+									<th scope="row">5</th>
 									<td>T-02</td>
 									<td>Compressor Outlet Temperature</td>
 									<td>Monitor</td>
 								</tr>
 								<tr>
-									<th scope="row">10</th>
+									<th scope="row">6</th>
 									<td>T-03</td>
 									<td>Condenser Outlet Temperature</td>
 									<td>Monitor</td>
 								</tr>
 								<tr>
-									<th scope="row">11</th>
+									<th scope="row">7</th>
 									<td>T-04</td>
 									<td>Evaporator Inlet Temperature</td>
 									<td>Monitor</td>
 								</tr>
 								<tr>
-									<th scope="row">12</th>
+									<th scope="row">8</th>
 									<td>T-05</td>
 									<td>Evaporator Outlet Temperature</td>
 									<td>Monitor</td>
 								</tr>
 								<tr>
-									<th scope="row">13</th>
+									<th scope="row">9</th>
 									<td>P-01</td>
 									<td>Evaporation Pressure</td>
 									<td>Monitor</td>
 								</tr>
 								<tr>
-									<th scope="row">14</th>
+									<th scope="row">10</th>
 									<td>P-02</td>
 									<td>Compressor Outlet Pressure</td>
 									<td>Monitor</td>
 								</tr>
 								<tr>
-									<th scope="row">15</th>
+									<th scope="row">11</th>
 									<td>P-03</td>
 									<td>Condensation Pressure</td>
 									<td>Monitor</td>
 								</tr>
 								<tr>
-									<th scope="row">16</th>
+									<th scope="row">12</th>
 									<td>F</td>
 									<td>Flowrate of Refrigerant</td>
 									<td>Monitor</td>
 								</tr>
 								<tr>
-									<th scope="row">17</th>
+									<th scope="row">13</th>
 									<td>E</td>
 									<td>Electric Power of Compressor</td>
 									<td>Monitor</td>
