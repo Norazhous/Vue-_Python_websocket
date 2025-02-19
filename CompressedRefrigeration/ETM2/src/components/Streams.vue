@@ -1,24 +1,17 @@
 <template>
   <div>
-    <!-- <div><webcam-stream /></div>
-    <div><data-stream /></div> -->
-    <!-- <logging-stream /> -->
+
 </div>
 </template> 
 
 <script>
 
 import dayjs from "dayjs";
-//import LoggingStream from './LoggingStream.vue'
-// import WebcamStream from './ACON_WebcamStream.vue'
-// import DataStream from './ACON_DataStream.vue'
 
 export default {
   name: "Streams",
   components: {
-    //LoggingStream
-    // WebcamStream,
-    // DataStream,
+
   },
   data(){
     return{
@@ -26,9 +19,7 @@ export default {
     }
   },
   computed: {
-    // id() {
-    //   return this.$route.params.id;
-    // },
+
     getSessionExpired(){
       return this.$store.getters.getSessionExpired;
     },
@@ -110,12 +101,7 @@ export default {
           var when = _this.$store.getters.getConnectionDroppedAt;
           var since = dayjs().unix() - when;
           if (since > 10) {
-            //oh oh, haven't managed to reconnect, let's try again
-            // note on slow network or heavy load on relay-access, this might time out over and over again
-            // but user experience on a network that slow/server that loaded is questionable anyway
-            // given usually connect delay is  <<1sec; so we might consider that an edge case we are
-            // not likely to hit, so long as provisioning is ok (Server side)
-            // as for user network quality, never say never....
+          
             dropped();
           }
           return;

@@ -1,9 +1,9 @@
 <template>
-    <div class="row" id="R134a Chart">
-        <h2>R134a p-h diagram</h2>
+    <div class="row" id="R134a-Chart">
+        <h2 id="R134a-Chart-head">R134a p-h diagram</h2>
         <div class="col-12" id="R134aImageDiv">
             <!-- <img src="/images/ET-411C-Compression-refrigeration-system-gunt-206-foto_totale.jpg" alt=""> -->
-            <img src="/images/R134a.png" alt="R134a p-H chart" id="R134aImage">
+            <img id="R134aImage" src="/images/R134a.png" alt="R134a p-H chart" >
             <!-- <CanvasDrawing /> -->
         </div>
         <toolbar parentCanvasID="R134aChart-div" parentComponentName="R134aChart" parentDivID="R134aChart-div"

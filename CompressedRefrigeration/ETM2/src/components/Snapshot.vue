@@ -1,6 +1,6 @@
 <template>
     <div id="SnapShot-div">
-        <h2> Data Recorder </h2>
+        <h2 id="SnapShot-div-head"> Data Recorder </h2>
         <div class="container-fluid m-2 background-white border rounded table" id='snapshot-div'>
             <!-- <div>
             <InteractiveChart/>
@@ -76,11 +76,11 @@
             </div>
 
             <div class='d-grid gap-2 d-sm-block'>
-                <button id="snapshot" type='button' class="button-sm button-primary"
+                <button id="snapshot-record-button" type='button' class="button-sm button-primary"
                     @click="snapshot(); scrollTo('table-bottom');">Record Data</button>
-                <button id="reset_snaps" type='button' class="button-sm button-danger"
+                <button id="reset_snaps-button" type='button' class="button-sm button-danger"
                     @click="toggleResetModal">Reset</button>
-                <button id="download_snaps" type='button' class="button-sm button-secondary"
+                <button id="download_snaps-button" type='button' class="button-sm button-secondary"
                     @click="outputToCSV">Download
                     Data</button>
                 <!-- <button @click="setLocalStorage">localstoragetest</button> -->
@@ -218,21 +218,6 @@ export default {
 
         },
 
-        // test(){
-        //     // this.deleteSnapData();
-        //     // console.log(this.getSnapData);
-        //     // console.log({"t":0,"T1":0.2,"T2":0.3,"T3":0.4,"T4":0.5,"T5":0.6,"P1":0,"P2":1,"P3":1.1,"Flow":0.7,"Power":0.8,"TSA":0,"PSA":0,"HSA":0});
-        //     // this.addSnapData({"t":0,"T1":0.2,"T2":0.3,"T3":0.4,"T4":0.5,"T5":0.6,"P1":0,"P2":1,"P3":1.1,"Flow":0.7,"Power":0.8,"TSA":0,"PSA":0,"HSA":0})
-        //     // console.log(this.getStartTime);
-        // },
-
-        // plotDataInChart() {
-        //     console.log(InteractiveChart.startTime)
-        //     // InteractiveChart.methods.updatDataset();
-        //     InteractiveChart.methods.updateChartData();
-        //     // this.$root.$emit('chartPlotEvent');
-        // },
-
         resetSnaps() {
             this.deleteSnapData();
             this.buttonValue = -1;
@@ -309,30 +294,7 @@ export default {
 
         }
 
-        // getLocalStorage(val){
-        //     this.snaps= val;
-        //     console.log(this.snaps);
-        // },
-
-        // setLocalStorage(){
-        //     localStorage.setItem('snaps',JSON.stringify(this.$store.state.rawData.snapdata));
-        //     console.log(this.getSnapDate);
-        // },
-        // getLocalStorage(){
-        //     this.snaps= JSON.parse(localStorage.getItem('snaps'));
-        //     console.log(this.snaps);
-        // },
-
-        // confirm_leaving(evt) {
-        //     if (this.snaps != []) {
-        //         const unsaved_changes_warning = "You have unsaved changes. Are you sure you wish to leave?";
-        //         evt.returnValue = unsaved_changes_warning; 
-        //         this.setLocalStorage();
-        //         InteractiveChart.methods.setLocalStorage();
-        //         return unsaved_changes_warning;
-        //     };
-        // },
-
+      
     }
 }
 </script>

@@ -1,11 +1,7 @@
 <template>
 
   <div id="app" class='container-fluid-sm m-0'>
-
-    <!-- <div class="row">
-          <div class="col-lg-6" style="background-color: aqua; height: 10px; width: auto;"></div>
-          <div class="col-lg-6" style="background-color: aqua; height: 10px; width: auto;"></div>
-        </div> -->
+    
     <navigation-bar @toggleconsent="showConsentModal = true" @togglesnapshot="toggleSnapshot" @togglegraph="toggleGraph"
       @togglestopwatch="toggleStopwatch" @toggleR134aChart="toggleR134aChart" @toggletable="toggleTable" />
 
@@ -13,6 +9,7 @@
 
 
     <streams id='streams' />
+    <logging id='logging' />
 
 
     <div class='row' id='component-grid'>
@@ -83,7 +80,7 @@ import RealtimeChart from "./components/RealtimeChart.vue";
 import R134aChart from "./components/R134aChart.vue";
 import InteractiveChart from "./components/InteractiveChart.vue";
 import RigElement from "./components/RigElement.vue";
-
+import logging from "./components/Logging.vue";
 
 
 import { mapGetters } from 'vuex'
@@ -105,6 +102,7 @@ export default {
     Consent,
     InteractiveChart,
     RigElement,
+    logging,
 
   },
   data() {

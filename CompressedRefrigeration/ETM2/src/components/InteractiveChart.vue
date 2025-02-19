@@ -1,15 +1,8 @@
 <template>
     <div style="width: 200; height: 200;" id="InteractiveChart-div">
-        <h2> Data Chart </h2>
-        <canvas class="background-white" id="realTimeChart" width="600" height="400"
+        <h2 id="interactiveChart-title"> Data Chart </h2>
+        <canvas class="background-white" id="interactiveChart" width="600" height="400"
             style="background-color: white;"></canvas>
-        <!-- <button @click="updateChartData()">update the chart</button>
-        <button @click="removeChartData()">remove</button>
-        <button @click="clearChartData()">clear</button> -->
-        <!-- <button @click="test">test</button> -->
-        <!-- <button @click="setLocalStorage">localstoragetest</button> -->
-        <!-- <button @click="getLocalStorage">getLocalStorage</button> -->
-        <!-- <button @click="updatechartbyLocal">updatechartbyLocal</button> -->
 
         <toolbar style="margin-top: 10px;" parentCanvasID="InteractiveChart-div" parentComponentName="InteractiveChart"
             parentDivID="InteractiveChart-div" :showDownload='false' :showPopupHelp="true" :showOptions="false"
@@ -81,7 +74,7 @@ export default {
     },
     data() {
         // the chart need to be out side of return{ }, otherwise has the bug "Uncaught RangeError: Maximum call stack size exceeded"
-        this.realTimeChart = null
+        this.interactiveChart = null
         // this.datasetTS1 = [],
         //     this.datasetTS2 = [],
         //     this.datasetTS3 = [],
@@ -143,8 +136,8 @@ export default {
             // console.log(this.startTime);
 
             // Initialize Chart.js
-            var ctx = document.getElementById('realTimeChart').getContext('2d');
-            this.realTimeChart = new Chart(ctx, {
+            var ctx = document.getElementById('interactiveChart').getContext('2d');
+            this.interactiveChart = new Chart(ctx, {
                 type: 'line',
                 data: {
                     labels: [], // Fixed x-axis labels
@@ -258,20 +251,7 @@ export default {
 
         //update dataset for chart input
         updatDataset() {
-            //use the currenttime -starttime as the x axis
-            // var currentTime = (Date.now() - this.getStartTime) / 1000;
-            // this.setCurrentTime((Date.now() - this.getStartTime) / 1000);
-
-
-            // console.log(this.datasetTS1);
-            // push the data into the dataset for chart plotting 
-            // this.datasetTS1 = [x:currentTime, y:this.getSnapData.t]
-            // this.datasetTS1.push({
-            //     x: currentTime,
-            //     y: this.getSnapData[this.getSnapData.length-1].T1,
-            // });
-            // console.log(this.datasetTS1);
-            // console.log(this.dataset);
+         
             this.datasetTS1.push({
                 x: this.GETCurrentTime,
                 y: this.GetCurrentTS1,
@@ -319,49 +299,35 @@ export default {
 
             // if (this.local == 0) {
             this.updatDataset();
-            // this.realTimeChart.data.datasets.data.push(this.dataset[this.dataset.length - 1]);
+            // this.interactiveChart.data.datasets.data.push(this.dataset[this.dataset.length - 1]);
             // update chart :https://www.chartjs.org/docs/latest/developers/updates.html
-            // console.log(this.realTimeChart.data.datasets);
-            // this.realTimeChart.data.datasets.forEach((dataset) => {
+            // console.log(this.interactiveChart.data.datasets);
+            // this.interactiveChart.data.datasets.forEach((dataset) => {
             //     dataset.data.push(this.dataset[this.dataset.length - 1]);
-            //    console.log(this.realTimeChart.data.datasets);
-            //    console.log(this.realTimeChart.data.datasets.data);
+            //    console.log(this.interactiveChart.data.datasets);
+            //    console.log(this.interactiveChart.data.datasets.data);
             // });
-            // console.log(this.realTimeChart);
+            // console.log(this.interactiveChart);
 
-            this.realTimeChart.data.datasets[0].data.push(this.datasetTS1[this.datasetTS1.length - 1]);
-            this.realTimeChart.data.datasets[1].data.push(this.datasetTS2[this.datasetTS2.length - 1]);
-            this.realTimeChart.data.datasets[2].data.push(this.datasetTS3[this.datasetTS3.length - 1]);
-            this.realTimeChart.data.datasets[3].data.push(this.datasetTS4[this.datasetTS4.length - 1]);
-            this.realTimeChart.data.datasets[4].data.push(this.datasetTS5[this.datasetTS5.length - 1]);
-            this.realTimeChart.data.datasets[5].data.push(this.datasetPS1[this.datasetPS1.length - 1]);
-            this.realTimeChart.data.datasets[6].data.push(this.datasetPS2[this.datasetPS2.length - 1]);
-            this.realTimeChart.data.datasets[7].data.push(this.datasetPS3[this.datasetPS3.length - 1]);
-            this.realTimeChart.data.datasets[8].data.push(this.datasetFlow[this.datasetFlow.length - 1]);
-            this.realTimeChart.data.datasets[9].data.push(this.datasetPower[this.datasetPower.length - 1]);
+            this.interactiveChart.data.datasets[0].data.push(this.datasetTS1[this.datasetTS1.length - 1]);
+            this.interactiveChart.data.datasets[1].data.push(this.datasetTS2[this.datasetTS2.length - 1]);
+            this.interactiveChart.data.datasets[2].data.push(this.datasetTS3[this.datasetTS3.length - 1]);
+            this.interactiveChart.data.datasets[3].data.push(this.datasetTS4[this.datasetTS4.length - 1]);
+            this.interactiveChart.data.datasets[4].data.push(this.datasetTS5[this.datasetTS5.length - 1]);
+            this.interactiveChart.data.datasets[5].data.push(this.datasetPS1[this.datasetPS1.length - 1]);
+            this.interactiveChart.data.datasets[6].data.push(this.datasetPS2[this.datasetPS2.length - 1]);
+            this.interactiveChart.data.datasets[7].data.push(this.datasetPS3[this.datasetPS3.length - 1]);
+            this.interactiveChart.data.datasets[8].data.push(this.datasetFlow[this.datasetFlow.length - 1]);
+            this.interactiveChart.data.datasets[9].data.push(this.datasetPower[this.datasetPower.length - 1]);
 
-            // console.log(this.realTimeChart.data.datasets);
+            // console.log(this.interactiveChart.data.datasets);
             // console.log(this.dataset.length);
 
             // Update the chart
-            this.realTimeChart.update();
+            this.interactiveChart.update();
             console.log(this.datasetTS1);
             // } else if (this.local == 1) {
 
-            //     this.realTimeChart.data.datasets[0].data = this.datasetTS1;
-            //     this.realTimeChart.data.datasets[1].data = this.datasetTS2;
-            //     this.realTimeChart.data.datasets[2].data = this.datasetTS3;
-            //     this.realTimeChart.data.datasets[3].data = this.datasetTS4;
-            //     this.realTimeChart.data.datasets[4].data = this.datasetTS5;
-            //     this.realTimeChart.data.datasets[5].data = this.datasetPS1;
-            //     this.realTimeChart.data.datasets[6].data = this.datasetPS2;
-            //     this.realTimeChart.data.datasets[7].data = this.datasetPS3;
-            //     this.realTimeChart.data.datasets[8].data = this.datasetFlow;
-            //     this.realTimeChart.data.datasets[9].data = this.datasetPower;
-            //     this.realTimeChart.update();
-            //     this.local = 0;
-            //     return;
-            // }
 
         },
 
@@ -377,20 +343,20 @@ export default {
 
         //remove one data in the chart
         removeChartData() {
-            this.realTimeChart.data.datasets.forEach((dataset) => {
+            this.interactiveChart.data.datasets.forEach((dataset) => {
                 dataset.data.pop();
             })
 
-            this.realTimeChart.update();
+            this.interactiveChart.update();
         },
 
         //remove All data in the chart
         clearChartData() {
             //clear the dataset in the chart
-            this.realTimeChart.data.datasets.forEach((dataset) => {
+            this.interactiveChart.data.datasets.forEach((dataset) => {
                 dataset.data = [];
             })
-            this.realTimeChart.update();
+            this.interactiveChart.update();
             //clear the dataset as well
             // this.dataset = [];
             console.log(this.datasetTS1);
@@ -455,45 +421,18 @@ export default {
                 const PowerLocal = JSON.parse(localStorage.getItem('datasetPower'));
                 const startTime = JSON.parse(localStorage.getItem('starttime'));
 
-                this.realTimeChart.data.datasets[0].data = TS1Local;
-                this.realTimeChart.data.datasets[1].data = TS2Local;
-                this.realTimeChart.data.datasets[2].data = TS3Local;
-                this.realTimeChart.data.datasets[3].data = TS4Local;
-                this.realTimeChart.data.datasets[4].data = TS5Local;
-                this.realTimeChart.data.datasets[5].data = PS1Local;
-                this.realTimeChart.data.datasets[6].data = PS2Local;
-                this.realTimeChart.data.datasets[7].data = PS3Local;
-                this.realTimeChart.data.datasets[8].data = FlowLocal;
-                this.realTimeChart.data.datasets[9].data = PowerLocal;
+                this.interactiveChart.data.datasets[0].data = TS1Local;
+                this.interactiveChart.data.datasets[1].data = TS2Local;
+                this.interactiveChart.data.datasets[2].data = TS3Local;
+                this.interactiveChart.data.datasets[3].data = TS4Local;
+                this.interactiveChart.data.datasets[4].data = TS5Local;
+                this.interactiveChart.data.datasets[5].data = PS1Local;
+                this.interactiveChart.data.datasets[6].data = PS2Local;
+                this.interactiveChart.data.datasets[7].data = PS3Local;
+                this.interactiveChart.data.datasets[8].data = FlowLocal;
+                this.interactiveChart.data.datasets[9].data = PowerLocal;
 
-                this.realTimeChart.update();
-
-                //Uncaught (in promise) RangeError: Maximum call stack size exceeded
-                // this.datasetTS1 = JSON.parse(localStorage.getItem('datasetTS1'));
-                // this.datasetTS2 = JSON.parse(localStorage.getItem('datasetTS2'));
-                // this.datasetTS3 = JSON.parse(localStorage.getItem('datasetTS3'));
-                // this.datasetTS4 = JSON.parse(localStorage.getItem('datasetTS4'));
-                // this.datasetTS5 = JSON.parse(localStorage.getItem('datasetTS5'));
-                // this.datasetPS1 = JSON.parse(localStorage.getItem('datasetPS1'));
-                // this.datasetPS2 = JSON.parse(localStorage.getItem('datasetPS2'));
-                // this.datasetPS3 = JSON.parse(localStorage.getItem('datasetPS3'));
-                // this.datasetFlow = JSON.parse(localStorage.getItem('datasetFlow'));
-                // this.datasetPower = JSON.parse(localStorage.getItem('datasetPower'));
-
-
-                // this.realTimeChart.data.datasets[0].data = this.datasetTS1;
-                // this.realTimeChart.data.datasets[1].data = this.datasetTS2;
-                // this.realTimeChart.data.datasets[2].data = this.datasetTS3;
-                // this.realTimeChart.data.datasets[3].data = this.datasetTS4;
-                // this.realTimeChart.data.datasets[4].data = this.datasetTS5;
-                // this.realTimeChart.data.datasets[5].data = this.datasetPS1;
-                // this.realTimeChart.data.datasets[6].data = this.datasetPS2;
-                // this.realTimeChart.data.datasets[7].data = this.datasetPS3;
-                // this.realTimeChart.data.datasets[8].data = this.datasetFlow;
-                // this.realTimeChart.data.datasets[9].data = this.datasetPower;
-                // this.realTimeChart.update();
-
-
+                this.interactiveChart.update();
 
                 this.setStartTime(startTime);
 
@@ -512,33 +451,10 @@ export default {
                 this.datasetPS3 = [...PS3Local];
                 this.datasetFlow = [...FlowLocal];
                 this.datasetPower = [...PowerLocal];
-
-                // this.local = 1;
-                // this.updateChartData();
-
-                // console.log("TS1Local" + TS1Local + "datasetTS1" + this.datasetTS1);
-
             }
 
 
         },
-
-
-        //Uncaught (in promise) RangeError: Maximum call stack size exceeded
-        // updatechartbyLocal() {
-        //     this.realTimeChart.data.datasets[0].data = this.datasetTS1;
-        //     this.realTimeChart.data.datasets[1].data = this.datasetTS2;
-        //     this.realTimeChart.data.datasets[2].data = this.datasetTS3;
-        //     this.realTimeChart.data.datasets[3].data = this.datasetTS4;
-        //     this.realTimeChart.data.datasets[4].data = this.datasetTS5;
-        //     this.realTimeChart.data.datasets[5].data = this.datasetPS1;
-        //     this.realTimeChart.data.datasets[6].data = this.datasetPS2;
-        //     this.realTimeChart.data.datasets[7].data = this.datasetPS3;
-        //     this.realTimeChart.data.datasets[8].data = this.datasetFlow;
-        //     this.realTimeChart.data.datasets[9].data = this.datasetPower;
-        //     this.realTimeChart.update();
-        // },
-
 
         confirm_leaving(evt) {
             if (this.snaps != []) {
@@ -565,14 +481,6 @@ export default {
                     this. removeLocalStorageData();
                 }
             }
-
-            // test() {
-            //     this.realTimeChart.data.datasets[0].data = [{ "x": 0, "y": 0.2 }, { "x": 0.2, "y": 0.2 }, { "x": 0.5, "y": 0.2 }, { "x": 0.7, "y": 0.2 }, { "x": 1, "y": 0.2 }];
-            //     this.realTimeChart.update();
-            //     this.datasetTS1 = [{ "x": 37.25, "y": 0.2 }, { "x": 38.271, "y": 0.2 }, { "x": 39.347, "y": 0.2 }, { "x": 39.711, "y": 0.2 }, { "x": 40.161, "y": 0.2 }];
-            //     this.addLocalSnapData([{ "x": 37.25, "y": 0.2 }, { "x": 38.271, "y": 0.2 }, { "x": 39.347, "y": 0.2 }, { "x": 39.711, "y": 0.2 }, { "x": 40.161, "y": 0.2 }]);
-            //     console.log(this.getSnapData);
-            // }
 
         }
     }

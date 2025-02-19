@@ -1,18 +1,18 @@
 <template>
 	<div id="ControlPanel-div">
-		<h2> Experiment Control Panel and Schematic </h2>
+		<h2 id="controlPanel-head"> Experiment Control Panel and Schematic </h2>
 		<div class='container-fluid m-2 background-white border rounded'>
 
-			<div>
+			<div id="ControlPanel-PID">
 				<PID />
 			</div>
-			<div id="buttons" class="row">
+			<div id="ControlPanel-buttons" class="row">
 
-				<div class="col-3 offset-2">
-					<div class="form-check form-switch">
-						<input class="form-check-input" type="checkbox" :checked="V1SwitchControllor"
+				<div id="control-button-group" class="col-3 offset-2">
+					<div  id="valve1-button-switch" class="form-check form-switch">
+						<input id="valve1-button-input" class="form-check-input" type="checkbox" :checked="V1SwitchControllor"
 							:disabled="V1SwitchDisabled" @click="valve1ColorChange()">
-						<label class="form-check-label" :style="{ color: valve1Color }">V1 {{ V1state }}</label>
+						<label id="valve1-button-label" class="form-check-label" :style="{ color: valve1Color }">V1 {{ V1state }}</label>
 					</div>
 					<!-- <div class="form-check form-switch">
 						<input class="form-check-input" type="checkbox" :checked="V2SwitchControllor"
@@ -31,16 +31,16 @@
 					</div> -->
 				</div>
 
-				<div class="col-3">
-					<div class="form-check form-switch">
-						<input class="form-check-input" type="checkbox" :checked="V5SwitchControllor"
+				<div id="control-button-group" class="col-3">
+					<div id="valve5-button-switch" class="form-check form-switch">
+						<input id="valve5-button-input" class="form-check-input" type="checkbox" :checked="V5SwitchControllor"
 							:disabled="V5SwitchDisabled" @click="valve5ColorChange()">
-						<label class="form-check-label" :style="{ color: valve5Color }">V5 {{ V5state }}</label>
+						<label id="valve5-button-label" class="form-check-label" :style="{ color: valve5Color }">V5 {{ V5state }}</label>
 					</div>
-					<div class="form-check form-switch">
-						<input class="form-check-input" type="checkbox" :checked="V6SwitchControllor"
+					<div id="valve6-button-switch" class="form-check form-switch">
+						<input id="valve6-button-input" class="form-check-input" type="checkbox" :checked="V6SwitchControllor"
 							:disabled="V6SwitchDisabled" @click="valve6ColorChange()">
-						<label class="form-check-label" :style="{ color: valve6Color }">V6 {{ V6state }}</label>
+						<label id="valve6-button-label" class="form-check-label" :style="{ color: valve6Color }">V6 {{ V6state }}</label>
 					</div>
 					<!-- <div class="form-check form-switch">
 						<input class="form-check-input" type="checkbox" :checked="V7SwitchControllor"
@@ -51,22 +51,22 @@
 				</div>
 
 
-				<div class="col-3">
-					<div class="form-check form-switch">
-						<input class="form-check-input" type="checkbox" :checked="W1SwitchControllor"
+				<div id="control-button-group" class="col-3">
+					<div id="fans-button-switch" class="form-check form-switch">
+						<input id="fans-button-input" class="form-check-input" type="checkbox" :checked="W1SwitchControllor"
 							:disabled="W1SwitchDisabled" @click="w1ColorChange()">
-						<label class="form-check-label" :style="{ color: w1color }"> Fans {{ W1state }} </label>
+						<label id="fans-button-label" class="form-check-label" :style="{ color: w1color }"> Fans {{ W1state }} </label>
 					</div>
-					<div class="form-check form-switch">
-						<input class="form-check-input" type="checkbox" :checked="COMPSwitchControllor"
+					<div id="compressor-button-switch" class="form-check form-switch">
+						<input id="compressor-button-input" class="form-check-input" type="checkbox" :checked="COMPSwitchControllor"
 							:disabled="COMPSwitchDisabled" @click="compColorChange()">
-						<label class="form-check-label" :style="{ color: compcolor }"> Compressor {{ COMPstate
+						<label id="compressor-button-label" class="form-check-label" :style="{ color: compcolor }"> Compressor {{ COMPstate
 							}}</label>
 					</div>
-					<div class="form-check form-switch">
-						<input class="form-check-input" type="checkbox" :checked="lightSwitchControllor"
+					<div id="lights-button-switch" class="form-check form-switch">
+						<input id="lights-button-input" class="form-check-input" type="checkbox" :checked="lightSwitchControllor"
 							:disabled="lightSwitchDisabled" @click="lightColorChange()">
-						<label class="form-check-label" :style="{ color: lightcolor }"> Lights {{ lightstate }}</label>
+						<label id="lights-button-label" class="form-check-label" :style="{ color: lightcolor }"> Lights {{ lightstate }}</label>
 					</div>
 				</div>
 			</div>

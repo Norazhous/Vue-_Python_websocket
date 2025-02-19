@@ -1,6 +1,6 @@
 <template>
   <div class="row" id="RigElement-div">
-    <h2> Real Equipment and Real-Time Table </h2>
+    <h2 id="RigElement-div-head"> Real Equipment and Real-Time Table </h2>
     <div class="col-12 background-white" id="rigImage" >
       <!-- <div v-for="(position, index) in highlightedPositions" :key="index" class="highlight"
         :style="{ left: position.x, top: position.y }"></div> -->

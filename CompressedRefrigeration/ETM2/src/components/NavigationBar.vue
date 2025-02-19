@@ -1,5 +1,4 @@
 <template>
-
   <nav
     :class="getDarkTheme ? 'navbar navbar-light fixed-top navbar-expand-lg navbar-background' : 'navbar navbar-dark fixed-top navbar-expand-lg  navbar-background'"
     id='navbar'>
@@ -23,8 +22,10 @@
               Menu
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <li><a class="dropdown-item" href="#" @click='toggleComponent("stopwatch")'>Stopwatch</a></li>
-              <li><a class="dropdown-item" href="#" @click='toggleComponent("R134aChart")'>R134a p-h Diagram</a></li>
+              <li id="nav-stopwatch"><a class="dropdown-item" href="#"
+                  @click='toggleComponent("stopwatch")'>Stopwatch</a></li>
+              <li id="nav-r134aDiagram"><a class="dropdown-item" href="#" @click='toggleComponent("R134aChart")'>R134a
+                  p-h Diagram</a></li>
               <!-- <li><a class="dropdown-item" href="#" @click='toggleComponent("snapshot")'>Snapshot</a></li> -->
             </ul>
           </li>
